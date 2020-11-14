@@ -8,7 +8,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - ![Alt text](http://s.glbimg.com/po/tt/f/original/2012/04/17/mysql-logos.gif) [MySql](https://www.mysql.com/)
 - <img src="https://compuclass.com.br/wp-content/uploads/2019/12/capa-curso-sql-server.png" width="25%" height="25%"> [SQL Server](https://docs.microsoft.com/pt-br/sql/sql-server/?view=sql-server-ver15)
 - <img src="https://foxlearn.com/images/automapper-d71c3e45-861a-405d.png?ezimgfmt=rs:700x410/rscb2/ng:webp/ngcb2" width="25%" height="25%"> [AutoMapper](https://automapper.org/)
-- ![Alt text](https://www.scottbrady91.com/img/logos/swagger-banner.png) [Swagger](https://swagger.io/)
+- <img src="https://www.scottbrady91.com/img/logos/swagger-banner.png" width="25%" height="25%"> [Swagger](https://swagger.io/)
 - ![Alt text](https://www.newtonsoft.com/content/images/twitterlogo.png) [NewtonSoft](https://www.newtonsoft.com/json)
 
 
