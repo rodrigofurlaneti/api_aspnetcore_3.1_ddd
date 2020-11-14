@@ -10,6 +10,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - <img src="https://foxlearn.com/images/automapper-d71c3e45-861a-405d.png?ezimgfmt=rs:700x410/rscb2/ng:webp/ngcb2" width="25%" height="25%"> [AutoMapper](https://automapper.org/)
 - <img src="https://www.scottbrady91.com/img/logos/swagger-banner.png" width="25%" height="25%"> [Swagger](https://swagger.io/)
 - <img src="https://miro.medium.com/max/887/1*4HIU0YdDkj0dmGySVC5D_g.png" width="25%" height="25%"> [EntityFramework Core](https://docs.microsoft.com/pt-br/ef/core/)
+- <img src="https://miro.medium.com/max/1050/1*Nnu-OC1BbymgvpOiY9nvwg.png" width="25%" height="25%"> [Jwt - JSON Web Tokens](https://jwt.io/)
 - ![Alt text](https://www.newtonsoft.com/content/images/twitterlogo.png) [NewtonSoft](https://www.newtonsoft.com/json)
 
 ## Api.Application - Estrutura padrão - controllers - projeto principal de inicio da solução.
