@@ -10,7 +10,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 <p align="center">Relacionamento de camadas DDD</p>
 
-![alt text](Fluxograma.png)
+![alt text](Fluxograma.jpeg)
 
 
 ## Api.Application - Estrutura padrão - controllers - projeto principal de inicio da solução.
