@@ -7,6 +7,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - <img src="https://3.bp.blogspot.com/-mxF__jCVkCU/XefJCxxy9WI/AAAAAAAAXyg/AvVFyFT0JAEquOWki4j1sw4hu_RlBZDQwCLcBGAsYHQ/s1600/download-latest-dotnet-core-min.jpg" width="25%" height="25%"> [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.401-windows-x64-installer)
 - ![Alt text](http://s.glbimg.com/po/tt/f/original/2012/04/17/mysql-logos.gif) [MySql](https://www.mysql.com/)
 - <img src="https://compuclass.com.br/wp-content/uploads/2019/12/capa-curso-sql-server.png" width="25%" height="25%"> [SQL Server](https://docs.microsoft.com/pt-br/sql/sql-server/?view=sql-server-ver15)
+- ![Alt text](https://cdn-images-1.medium.com/fit/t/1600/480/1*aKVg84SP5oPV9fwOnbl6yQ.png) [Swagger](https://swagger.io/)
 - ![Alt text](https://www.newtonsoft.com/content/images/twitterlogo.png) [NewtonSoft](https://www.newtonsoft.com/json)
 
 
