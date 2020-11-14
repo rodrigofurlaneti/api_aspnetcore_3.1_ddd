@@ -8,16 +8,17 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - <img src="https://compuclass.com.br/wp-content/uploads/2019/12/capa-curso-sql-server.png" width="25%" height="25%"> [SQL Server](https://docs.microsoft.com/pt-br/sql/sql-server/?view=sql-server-ver15)
 - ![Alt text](https://www.newtonsoft.com/content/images/twitterlogo.png) [NewtonSoft](https://www.newtonsoft.com/json)
 
-<p align="center">Relacionamento de camadas DDD</p>
-
-![alt text](Fluxograma.jpeg)
-
 
 ## Api.Application - Estrutura padrão - controllers - projeto principal de inicio da solução.
 ## Api.Data - Comunicação com o Banco de Dados - biblioteca de classes
 ## Api.Service - Regra de negocio - biblioteca de classes
 ## Api.Dominio - Modelos, Classes - biblioteca de classes
 ## Api.Cross - Suporte para camada application - biblioteca de classes
+
+<p align="center">Relacionamento de camadas DDD</p>
+
+![alt text](Fluxograma.jpeg)
+
 
 ```shell
 Rodrigo Luiz Madeira Furlaneti - 11 995882409 WhatsApp
