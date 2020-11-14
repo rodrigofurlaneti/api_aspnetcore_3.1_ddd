@@ -8,9 +8,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - <img src="https://compuclass.com.br/wp-content/uploads/2019/12/capa-curso-sql-server.png" width="25%" height="25%"> [SQL Server](https://docs.microsoft.com/pt-br/sql/sql-server/?view=sql-server-ver15)
 - ![Alt text](https://www.newtonsoft.com/content/images/twitterlogo.png) [NewtonSoft](https://www.newtonsoft.com/json)
 
-<p align="center">MER</p>
+<p align="center">Relacionamento de camadas DDD</p>
 
-![alt text](MER.png)
+![alt text](Fluxograma.png)
 
 
 ## Api.Application - Estrutura padrão - controllers - projeto principal de inicio da solução.
