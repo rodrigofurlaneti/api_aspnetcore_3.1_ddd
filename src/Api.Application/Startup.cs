@@ -1,12 +1,13 @@
 using System;
 using Api.CrossCutting.DependencyInjection;
+using Api.Domain.Security;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-//using Microsoft.OpenApi.Models;
-
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 namespace Application
 {
     public class Startup
@@ -15,57 +16,55 @@ namespace Application
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesRepository(services);
+            SigningConfigurations signingConfigurations = new SigningConfigurations();
+            services.AddSingleton(signingConfigurations);
+            TokenConfigurations tokenConfigurations = new TokenConfigurations();
+            new ConfigureFromConfigurationOptions<TokenConfigurations>(
+                Configuration.GetSection("TokenConfigurations"))
+                    .Configure(tokenConfigurations);
+            services.AddSingleton(tokenConfigurations);
             services.AddControllers();
-            // services.AddSwaggerGen(c =>
-            // {
-            //     c.SwaggerDoc("v1", new OpenApiInfo
-            //     {
-            //         Version = "v1",
-            //         Title = "Curso de API com AspNetCore 3.1 - Na Prática",
-            //         Description = "Arquitetura DDD",
-            //         TermsOfService = new Uri("http://www.mfrinfo.com.br"),
-            //         Contact = new OpenApiContact
-            //         {
-            //             Name = "Marcos Fabricio Rosa",
-            //             Email = "mfr@mail.com",
-            //             Url = new Uri("http://www.mfrinfo.com.br")
-            //         },
-            //         License = new OpenApiLicense
-            //         {
-            //             Name = "Termo de Licença de Uso",
-            //             Url = new Uri("http://www.mfrinfo.com.br")
-            //         }
-            //     });
-            // });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "API com AspNetCore 3.1",
+                    Description = "Arquitetura DDD",
+                    TermsOfService = new Uri("https://github.com/rodrigofurlaneti"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Rodrigo Luiz Madeira Furlaneti",
+                        Email = "rodrigofurlaneti31@hotmail.com",
+                        Url = new Uri("https://github.com/rodrigofurlaneti")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Termo de Licença de Uso",
+                        Url = new Uri("https://github.com/rodrigofurlaneti")
+                    }
+                });
+            });
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            // app.UseSwagger();
-            // app.UseSwaggerUI(c =>
-            // {
-            //     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Curso de API com AspNetCore 3.1");
-            //     c.RoutePrefix = string.Empty;
-            // });
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API com AspNetCore 3.1 arquitetura DDD");
+                c.RoutePrefix = string.Empty;
+            });
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

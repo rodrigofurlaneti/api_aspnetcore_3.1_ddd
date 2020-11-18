@@ -36,7 +36,7 @@ namespace Api.Application.Controllers
         }
 
         [HttpGet]
-        [Route("{id}", Name = "GetWithId")]
+        [Route("{id}", Name = "UserGetWithId")]
         public async Task<ActionResult> Get(Guid id)
         {
             if (!ModelState.IsValid)
@@ -62,10 +62,10 @@ namespace Api.Application.Controllers
             }
             try
             {
-                var result = await _service.Post(user);
+                UserEntity result = await _service.Post(user);
                 if (result != null)
                 {
-                    return Created(new Uri(Url.Link("GetWithId", new { id = result.Id })), result);
+                    return Created(new Uri(Url.Link("UserGetWithId", new { id = result.Id })), result);
                 }
                 else
                 {
@@ -87,7 +87,7 @@ namespace Api.Application.Controllers
             }
             try
             {
-                var result = await _service.Put(user);
+                UserEntity result = await _service.Put(user);
                 if (result != null)
                 {
                     return Ok(result);

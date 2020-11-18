@@ -17,11 +17,14 @@ namespace Data.Migrations
                 .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Api.Domain.Entities.UserEntity", b =>
+            modelBuilder.Entity("Api.Domain.Entities.LogEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
+
+                    b.Property<bool>("Authenticated")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime?>("CreateAt")
                         .HasColumnType("datetime(6)");
@@ -30,10 +33,57 @@ namespace Data.Migrations
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
+                    b.Property<DateTime>("Expiration")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(60) CHARACTER SET utf8mb4")
                         .HasMaxLength(60);
+
+                    b.Property<string>("Token")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("UpdateAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Log");
+                });
+
+            modelBuilder.Entity("Api.Domain.Entities.UserEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Authenticated")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime?>("CreateAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
+
+                    b.Property<DateTime>("Expiration")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(60) CHARACTER SET utf8mb4")
+                        .HasMaxLength(60);
+
+                    b.Property<string>("Token")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");

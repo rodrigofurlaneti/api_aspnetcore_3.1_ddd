@@ -53,7 +53,7 @@
           "dependencies": {
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.5.1, )"
+              "version": "[5.6.3, )"
             }
           },
           "imports": [
@@ -266,6 +266,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
