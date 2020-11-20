@@ -1,37 +1,52 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Api.Domain.Dtos;
+using Api.Domain.Dtos.User;
 using Api.Domain.Entities;
 using Api.Domain.Interfaces;
 using Api.Domain.Interfaces.Services.User;
+using Api.Domain.Models;
+using AutoMapper;
+
 namespace Api.Service.Services
 {
     public class UserService : IUserService
     {
         private IRepository<UserEntity> _userRepository;
-        public UserService(IRepository<UserEntity> userRepository)
+        private readonly  IMapper _autoMapper;
+        public UserService(IRepository<UserEntity> userRepository, IMapper autoMapper)
         {
             _userRepository = userRepository;
+            _autoMapper = autoMapper;
         }
         public async Task<bool> Delete(Guid id)
         {
             return await _userRepository.DeleteAsync(id);
         }
-        public async Task<UserEntity> Get(Guid id)
+        public async Task<UserDto> Get(Guid id)
         {
-            return await _userRepository.SelectAsync(id);
+            UserEntity userEntity = await _userRepository.SelectAsync(id);
+            return _autoMapper.Map<UserDto>(userEntity);
         }
-        public async Task<IEnumerable<UserEntity>> GetAll()
+        public async Task<IEnumerable<UserDto>> GetAll()
         {
-            return await _userRepository.SelectAsync();
+            IEnumerable<UserEntity> userEntity = await _userRepository.SelectAsync();
+            return _autoMapper.Map<IEnumerable<UserDto>>(userEntity);
         }
-        public async Task<UserEntity> Post(UserEntity user)
+        public async Task<UserCreateResultDto> Post(UserDto user)
         {
-            return await _userRepository.InsertAsync(user);
+            UserModel model = _autoMapper.Map<UserModel>(user);
+            UserEntity entity = _autoMapper.Map<UserEntity>(model);
+            UserEntity result = await _userRepository.InsertAsync(entity);
+            return _autoMapper.Map<UserCreateResultDto>(result);
         }
-        public async Task<UserEntity> Put(UserEntity user)
+        public async Task<UserUpdateResultDto> Put(UserDto user)
         {
-            return await _userRepository.UpdateAsync(user);
+            UserModel model = _autoMapper.Map<UserModel>(user);
+            UserEntity entity = _autoMapper.Map<UserEntity>(model);
+            UserEntity result = await _userRepository.UpdateAsync(entity);
+            return _autoMapper.Map<UserUpdateResultDto>(result);
         }
     }
 }

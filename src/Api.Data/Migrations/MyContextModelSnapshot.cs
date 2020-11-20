@@ -19,38 +19,37 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Api.Domain.Entities.LogEntity", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("Authenticated")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime?>("CreateAt")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("Email")
-                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
-                        .HasMaxLength(100);
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("Expiration")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Hostname")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Ipv4")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Ipv6")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Message")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("varchar(60) CHARACTER SET utf8mb4")
-                        .HasMaxLength(60);
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Token")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<DateTime?>("UpdateAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.HasKey("Id");
+                    b.HasKey("CreateAt");
 
                     b.ToTable("Log");
                 });
@@ -64,7 +63,7 @@ namespace Data.Migrations
                     b.Property<bool>("Authenticated")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime?>("CreateAt")
+                    b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
@@ -85,7 +84,7 @@ namespace Data.Migrations
                     b.Property<string>("Token")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<DateTime?>("UpdateAt")
+                    b.Property<DateTime>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");

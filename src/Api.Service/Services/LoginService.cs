@@ -30,7 +30,7 @@ namespace Api.Service.Services
             _tokenConfigurations = tokenConfigurations;
             _configuration = configuration;
         }
-        public async Task<UserEntity> FindByLogin(string email)
+        public async Task<UserEntity> FindByLogin(string email, string hostName, string ipv6, string ipv4)
         {
             UserEntity baseUser = new UserEntity();
             if(email != null && !string.IsNullOrWhiteSpace(email))
@@ -42,7 +42,7 @@ namespace Api.Service.Services
                     baseUserResp.Email = email;
                     baseUserResp.Authenticated = false;
                     baseUserResp.Message = "Falha ao atenticar, não existe este e-mail cadastrado na base!";
-                    _logRepository.CreateLog(baseUserResp);
+                    await _logRepository.CreateLogAsync(baseUserResp, hostName, ipv6, ipv4);
                     return baseUserResp;
                 }
                 else
@@ -61,7 +61,7 @@ namespace Api.Service.Services
                     string token = CreateToken(identity, createDate, expirationDate, handler);
                     UserEntity baseUserOk = new UserEntity();
                     baseUserOk = SuccessObject(baseUser.Id, baseUser.Name, createDate, expirationDate, token, email);
-                    _logRepository.CreateLog(baseUserOk);
+                    await _logRepository.CreateLogAsync(baseUserOk, hostName, ipv6, ipv4);
                     return baseUserOk;
                 }
             }

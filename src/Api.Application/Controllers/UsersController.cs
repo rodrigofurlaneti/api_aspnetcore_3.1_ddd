@@ -1,23 +1,26 @@
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using Api.Domain.Dtos;
+using Api.Domain.Dtos.User;
 using Api.Domain.Entities;
 using Api.Domain.Interfaces.Services.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Application.Controllers
 {
-    //http://localhost:5000/api/users
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
-        public IUserService _service { get; set; }
-        public UsersController(IUserService service)
+        public IUserService _userService { get; set; }
+        public UsersController(IUserService userService)
         {
-            _service = service;
+            _userService = userService;
         }
 
+        [Authorize("Bearer")]
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
@@ -27,7 +30,7 @@ namespace Api.Application.Controllers
             }
             try
             {
-                return Ok(await _service.GetAll());
+                return Ok(await _userService.GetAll());
             }
             catch (ArgumentException e)
             {
@@ -35,6 +38,7 @@ namespace Api.Application.Controllers
             }
         }
 
+        [Authorize("Bearer")]
         [HttpGet]
         [Route("{id}", Name = "UserGetWithId")]
         public async Task<ActionResult> Get(Guid id)
@@ -45,16 +49,17 @@ namespace Api.Application.Controllers
             }
             try
             {
-                return Ok(await _service.Get(id));
+                return Ok(await _userService.Get(id));
             }
             catch (ArgumentException e)
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
         }
-
+        
+        [Authorize("Bearer")]
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] UserEntity user)
+        public async Task<ActionResult> Post([FromBody] UserDto user)
         {
             if (!ModelState.IsValid)
             {
@@ -62,7 +67,7 @@ namespace Api.Application.Controllers
             }
             try
             {
-                UserEntity result = await _service.Post(user);
+                UserCreateResultDto result = await _userService.Post(user);
                 if (result != null)
                 {
                     return Created(new Uri(Url.Link("UserGetWithId", new { id = result.Id })), result);
@@ -78,8 +83,9 @@ namespace Api.Application.Controllers
             }
         }
 
+        [Authorize("Bearer")]
         [HttpPut]
-        public async Task<ActionResult> Put([FromBody] UserEntity user)
+        public async Task<ActionResult> Put([FromBody] UserDto user)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +93,7 @@ namespace Api.Application.Controllers
             }
             try
             {
-                UserEntity result = await _service.Put(user);
+                UserUpdateResultDto result = await _userService.Put(user);
                 if (result != null)
                 {
                     return Ok(result);
@@ -112,7 +118,7 @@ namespace Api.Application.Controllers
             }
             try
             {
-                return Ok(await _service.Delete(id));
+                return Ok(await _userService.Delete(id));
             }
             catch (ArgumentException e)
             {

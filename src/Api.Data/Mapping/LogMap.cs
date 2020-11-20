@@ -8,15 +8,7 @@ namespace Api.Data.Mapping
         public void Configure(EntityTypeBuilder<LogEntity> builder)
         {
             builder.ToTable("Log");
-
-            builder.HasKey(u => u.Id);
-
-            builder.Property(u => u.Name)
-                   .IsRequired()
-                   .HasMaxLength(60);
-
-            builder.Property(u => u.Email)
-                   .HasMaxLength(100);
+            builder.HasKey(u => u.CreateAt);
         }
     }
 }

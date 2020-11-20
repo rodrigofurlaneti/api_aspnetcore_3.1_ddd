@@ -5,7 +5,6 @@ using Api.Data.Context;
 using Api.Domain.Entities;
 using Api.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-
 namespace Api.Data.Repository
 {
     public class BaseRepository<T> : IRepository<T> where T : BaseEntity
@@ -50,22 +49,17 @@ namespace Api.Data.Repository
                 if (item.Id == Guid.Empty)
                 {
                     item.Id = Guid.NewGuid();
+                    item.CreateAt = DateTime.Now;
                 }
-
-                item.CreateAt = DateTime.UtcNow;
                 _dataset.Add(item);
-
                 await _context.SaveChangesAsync();
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
             return item;
         }
-
         public async Task<T> SelectAsync(Guid id)
         {
             try
@@ -77,7 +71,6 @@ namespace Api.Data.Repository
                 throw ex;
             }
         }
-
         public async Task<IEnumerable<T>> SelectAsync()
         {
             try
@@ -89,7 +82,6 @@ namespace Api.Data.Repository
                 throw ex;
             }
         }
-
         public async Task<T> UpdateAsync(T item)
         {
             try
@@ -99,19 +91,15 @@ namespace Api.Data.Repository
                 {
                     return null;
                 }
-
-                item.UpdateAt = DateTime.UtcNow;
+                item.UpdateAt = DateTime.Now;
                 item.CreateAt = result.CreateAt;
-
                 _context.Entry(result).CurrentValues.SetValues(item);
                 await _context.SaveChangesAsync();
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
             return item;
         }
     }
