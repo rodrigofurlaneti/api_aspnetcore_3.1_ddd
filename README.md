@@ -15,6 +15,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## Api.Application - Estrutura padrão - controllers - projeto principal de inicio da solução.
 ## Api.Data - Comunicação com o Banco de Dados - biblioteca de classes
+## Api.Data.Test - xUnit - biblioteca de classes
 ## Api.Service - Regra de negocio - biblioteca de classes
 ## Api.Dominio - Modelos, Classes - biblioteca de classes
 ## Api.Cross - Suporte para camada application - biblioteca de classes
