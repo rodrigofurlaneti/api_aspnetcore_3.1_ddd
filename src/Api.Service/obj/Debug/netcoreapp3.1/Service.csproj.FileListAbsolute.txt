@@ -26,3 +26,5 @@ C:\Users\Administrador\Desktop\src\Api.Service\obj\Debug\netcoreapp3.1\Service.c
 C:\Users\Administrador\Desktop\src\Api.Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
 C:\Users\Administrador\Desktop\src\Api.Service\obj\Debug\netcoreapp3.1\Service.dll
 C:\Users\Administrador\Desktop\src\Api.Service\obj\Debug\netcoreapp3.1\Service.pdb
+C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.dll
+C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.pdb

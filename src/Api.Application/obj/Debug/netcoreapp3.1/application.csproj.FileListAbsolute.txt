@@ -149,3 +149,5 @@ C:\Users\Administrador\Desktop\src\Api.Application\obj\Debug\netcoreapp3.1\stati
 C:\Users\Administrador\Desktop\src\Api.Application\obj\Debug\netcoreapp3.1\application.dll
 C:\Users\Administrador\Desktop\src\Api.Application\obj\Debug\netcoreapp3.1\application.pdb
 C:\Users\Administrador\Desktop\src\Api.Application\obj\Debug\netcoreapp3.1\application.genruntimeconfig.cache
+C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Application\obj\Debug\netcoreapp3.1\application.dll
+C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Application\obj\Debug\netcoreapp3.1\application.pdb

@@ -5347,11 +5347,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\src\\Api.CrossCutting\\CrossCutting.csproj",
+      "projectUniqueName": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.CrossCutting\\CrossCutting.csproj",
       "projectName": "CrossCutting",
-      "projectPath": "C:\\Users\\Administrador\\Desktop\\src\\Api.CrossCutting\\CrossCutting.csproj",
+      "projectPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.CrossCutting\\CrossCutting.csproj",
       "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrador\\Desktop\\src\\Api.CrossCutting\\obj\\",
+      "outputPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.CrossCutting\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5370,14 +5370,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Administrador\\Desktop\\src\\Api.Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\Desktop\\src\\Api.Data\\Data.csproj"
+            "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Data\\Data.csproj"
             },
-            "C:\\Users\\Administrador\\Desktop\\src\\Api.Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\Desktop\\src\\Api.Domain\\Domain.csproj"
+            "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Domain\\Domain.csproj"
             },
-            "C:\\Users\\Administrador\\Desktop\\src\\Api.Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\Desktop\\src\\Api.Service\\Service.csproj"
+            "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Service\\Service.csproj"
             }
           }
         }

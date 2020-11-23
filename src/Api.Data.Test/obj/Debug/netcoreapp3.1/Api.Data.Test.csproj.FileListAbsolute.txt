@@ -146,3 +146,5 @@ c:\Users\Administrador\Desktop\src\Api.Data.Test\obj\Debug\netcoreapp3.1\Api.Dat
 c:\Users\Administrador\Desktop\src\Api.Data.Test\obj\Debug\netcoreapp3.1\Api.Data.Test.genruntimeconfig.cache
 C:\Users\Administrador\Desktop\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Faker.NETCore.dll
 C:\Users\Administrador\Desktop\src\Api.Data.Test\bin\Debug\netcoreapp3.1\de-DE\Faker.NETCore.resources.dll
+C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Data.Test\obj\Debug\netcoreapp3.1\Api.Data.Test.dll
+C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Data.Test\obj\Debug\netcoreapp3.1\Api.Data.Test.pdb

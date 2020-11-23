@@ -28,3 +28,5 @@ C:\Users\Administrador\Desktop\src\Api.Data\obj\Debug\netcoreapp3.1\Data.csproj.
 C:\Users\Administrador\Desktop\src\Api.Data\obj\Debug\netcoreapp3.1\Data.dll
 C:\Users\Administrador\Desktop\src\Api.Data\obj\Debug\netcoreapp3.1\Data.pdb
 C:\Users\Administrador\Desktop\src\Api.Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache
+C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Data\obj\Debug\netcoreapp3.1\Data.dll
+C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Data\obj\Debug\netcoreapp3.1\Data.pdb

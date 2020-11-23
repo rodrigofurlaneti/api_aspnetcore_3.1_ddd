@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1rTvsGxARhOFTd1+KRSDg2aBqJUpf7UuZkgav/pNNTc3aBRAlXaRZ3mUIQnCSpgZBDQuuQXHlogn1OuhLvR3jQ==",
+  "dgSpecHash": "JRWR8rEJapB3unHJThWeXiFDoHeuLLJz439uLam+x3W+THZ2sRt0tBNGqywkQNgeUCVfPUY8cok1/z7GSgqnuQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\src\\Api.Application\\application.csproj",
+  "projectFilePath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",

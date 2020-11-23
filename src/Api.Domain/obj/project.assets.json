@@ -289,11 +289,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\src\\Api.Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\Administrador\\Desktop\\src\\Api.Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrador\\Desktop\\src\\Api.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
