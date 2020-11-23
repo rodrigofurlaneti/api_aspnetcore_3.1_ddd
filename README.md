@@ -12,6 +12,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - <img src="https://miro.medium.com/max/887/1*4HIU0YdDkj0dmGySVC5D_g.png" width="25%" height="25%"> [EntityFramework Core](https://docs.microsoft.com/pt-br/ef/core/)
 - <img src="https://miro.medium.com/max/1050/1*Nnu-OC1BbymgvpOiY9nvwg.png" width="25%" height="25%"> [Jwt - JSON Web Tokens](https://jwt.io/)
 - ![Alt text](https://www.newtonsoft.com/content/images/twitterlogo.png) [NewtonSoft](https://www.newtonsoft.com/json)
+- ![Alt text](https://logodix.com/logo/2029015.png) [xUnit](https://xunit.net/)
+
 
 ## Api.Application - Estrutura padrão - controllers - projeto principal de inicio da solução.
 ## Api.Data - Comunicação com o Banco de Dados - biblioteca de classes
