@@ -1,13 +1,11 @@
 using System.Net;
 using System;
 using System.Threading.Tasks;
-using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using Api.Domain.Interfaces.Services;
 using Api.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Api.Domain.Dtos;
-
 namespace Api.Application.Controllers
 {
     [Route("api/[controller]")]
@@ -26,7 +24,7 @@ namespace Api.Application.Controllers
             var dataClientRequest = Dns.GetHostEntry(Dns.GetHostName());
             string getHostName = dataClientRequest.HostName.ToString();
             string getIPV6 = dataClientRequest.AddressList[0].ToString();
-            string getIPV4 = dataClientRequest.AddressList[4].ToString();
+            string getIPV4 = dataClientRequest.AddressList[1].ToString();
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState); // Erro 400 Bad Request
@@ -37,6 +35,7 @@ namespace Api.Application.Controllers
             }
             try
             {
+                //UserEntity result = await service.FindByLogin(loginDto.Email, null, null, null);
                 UserEntity result = await service.FindByLogin(loginDto.Email, getHostName, getIPV6, getIPV4);
                 if(result != null)
                 {
