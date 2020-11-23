@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-namespace Api.Domain.Dtos
+namespace Api.Domain.Login.Dtos
 {
     public class LoginDto
     {

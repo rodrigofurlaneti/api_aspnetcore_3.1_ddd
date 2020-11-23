@@ -35,8 +35,7 @@ namespace Api.Application.Controllers
             }
             try
             {
-                //UserEntity result = await service.FindByLogin(loginDto.Email, null, null, null);
-                UserEntity result = await service..FindByLogin(loginDto.Email, getHostName, getIPV6, getIPV4);
+                UserEntity result = await service.FindByLogin(loginDto.Email, getHostName, getIPV6, getIPV4);
                 if(result != null)
                 {
                     return Ok(result); // Req 200
