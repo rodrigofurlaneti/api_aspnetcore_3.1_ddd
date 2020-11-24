@@ -6,17 +6,18 @@ using Moq;
 using Xunit;
 namespace Api.Service.Test.Action
 {
-    public class HowToRunningGet : UserTest
+    public class HowToRunningPost : UserTest
     {
         private IUserService _serviceUser;
         private Mock<IUserService> _serviceMook;
-        [Fact(DisplayName="É possivel executar o método GET.")]
-        public async Task ItIsPossibleToExecuteTheGetMethod()
+        [Fact(DisplayName="É possivel executar o método CREATE.")]
+        public async Task ItIsPossibleToExecuteTheCreateMethod()
         {
             _serviceMook = new Mock<IUserService>();
-            _serviceMook.Setup(m => m.Get(idCreate)).ReturnsAsync(userDto);
+            _serviceMook.Setup(m => m.Post(userDto)).ReturnsAsync(userCreateResultDto);
             _serviceUser = _serviceMook.Object;
-            var result = await _serviceUser.Get(idCreate);
+            
+            var result = await _serviceUser.Post(userDto);
             Assert.NotNull(result);
             Assert.Equal(nameCreate, result.Name);
 
@@ -26,6 +27,7 @@ namespace Api.Service.Test.Action
 
             var _record = await _serviceUser.Get(idCreate);
             Assert.Null(_record);
+
         }
     }
 }

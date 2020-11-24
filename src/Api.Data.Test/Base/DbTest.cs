@@ -2,7 +2,7 @@ using System;
 using Api.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-namespace Api.Data.Test
+namespace Api.Data.Test.Base
 {
     public class DbTest : IDisposable
     {

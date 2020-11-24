@@ -1,14 +1,13 @@
-using System.Runtime.InteropServices;
 using System;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using Api.Data.Context;
 using Api.Data.Implementations;
+using Api.Data.Test.Base;
 using Api.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
-namespace Api.Data.Test
+namespace Api.Data.Test.Action
 {
     public class UserCrudComplete : BaseTest, IClassFixture<DbTest>
     {

@@ -1,14 +1,13 @@
 using System;
-using Xunit;
 using AutoMapper;
 using Api.CrossCutting.Mappings;
-namespace Api.Service.Test
+namespace Api.Service.Test.Base
 {
     public class AutoMapperFixture : BaseTestService, IDisposable
     {
         public IMapper GetMapper()
         {
-            var configuration = new MapperConfiguration(config =>
+            MapperConfiguration configuration = new MapperConfiguration(config =>
            {
                config.AddProfile(new ModelToEntityProfile());
                config.AddProfile(new DtoToModelProfile());

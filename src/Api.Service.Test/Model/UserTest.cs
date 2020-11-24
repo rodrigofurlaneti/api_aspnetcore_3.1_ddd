@@ -6,48 +6,62 @@ namespace Api.Service.Test
 {
     public class UserTest
     {
-        public static Guid IdUser { get; set; }
-        public static string NameCreate{ get; set;}
-        public static string EmailCreate{ get; set;}
-        public static string NameUpdate{ get; set;}
-        public static string EmailUpdate{ get; set;}
-        public List<UserDto> ListUserDto = new List<UserDto>();
+        public static Guid idCreate { get; set; }
+        public static string nameCreate{ get; set;}
+        public static string emailCreate{ get; set;}
+        public static string nameUpdate{ get; set;}
+        public static string emailUpdate{ get; set;}
+        public List<UserCreateDto> listUserDto = new List<UserCreateDto>();
         public UserDto userDto;
+        public UserCreateDto userCreateDto; 
         public UserCreateResultDto userCreateResultDto; 
         public UserUpdateResultDto userUpdateResultDto; 
         public UserTest()
         {
-            NameCreate = Faker.Name.FullName();
-            EmailCreate = Faker.Internet.Email();
-            NameUpdate = Faker.Name.FullName();
-            EmailUpdate = Faker.Internet.Email();
+            idCreate = Guid.NewGuid();
+            nameCreate = Faker.Name.FullName();
+            emailCreate = Faker.Internet.Email();
+            nameUpdate = Faker.Name.FullName();
+            emailUpdate = Faker.Internet.Email();
+            
+            //Preencher a lista
             for(int i = 0; i < 10; i++)
             {
-                var dto = new UserDto()
+                var dto = new UserCreateDto()
                 {
+                    Id = Guid.NewGuid(),
                     Name = Faker.Name.FullName(),
                     Email = Faker.Internet.Email()
                 };
-                ListUserDto.Add(dto);
+                listUserDto.Add(dto);
             }
+
             userDto = new UserDto
             {
-                Name = NameCreate,
-                Email = EmailCreate
+                Name = nameCreate,
+                Email = emailCreate
             };
+
+            userCreateDto = new UserCreateDto
+            {
+                Id = idCreate,
+                Name = nameCreate,
+                Email = emailCreate
+            };
+
             userCreateResultDto = new UserCreateResultDto
             {
-                Id = Guid.NewGuid(),
-                Name = NameCreate,
-                Email = EmailCreate,
+                Id = idCreate,
+                Name = nameCreate,
+                Email = emailCreate,
                 CreateAt = DateTime.Now
-
             };
+
             userUpdateResultDto = new UserUpdateResultDto
             {
-                Id = userCreateResultDto.Id,
-                Name = NameCreate,
-                Email = EmailCreate,
+                Id = idCreate,
+                Name = nameCreate,
+                Email = emailCreate,
                 UpdateAt = DateTime.Now
             };
         }

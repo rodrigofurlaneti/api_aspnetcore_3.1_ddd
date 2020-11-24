@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,13 +15,13 @@ namespace Api.Service.Test.Action
         public async Task ItIsPossibleToExecuteTheGetAllMethod()
         {
             _serviceMook = new Mock<IUserService>();
-            _serviceMook.Setup(m => m.GetAll()).ReturnsAsync(ListUserDto);
+            _serviceMook.Setup(m => m.GetAll()).ReturnsAsync(listUserDto);
             _serviceUser = _serviceMook.Object;
             var result = await _serviceUser.GetAll();
             Assert.NotNull(result);
             Assert.True(result.Count() == 10);
 
-            List<UserDto> _listResult = new List<UserDto>();
+            List<UserCreateDto> _listResult = new List<UserCreateDto>();
             _serviceMook = new Mock<IUserService>();
             _serviceMook.Setup(m => m.GetAll()).ReturnsAsync(_listResult.AsEnumerable);
             _serviceUser = _serviceMook.Object;

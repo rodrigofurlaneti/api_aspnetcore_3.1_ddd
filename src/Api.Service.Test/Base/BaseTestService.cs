@@ -1,8 +1,5 @@
-using System;
-using Xunit;
 using AutoMapper;
-using Api.CrossCutting.Mappings;
-namespace Api.Service.Test
+namespace Api.Service.Test.Base
 {
     public abstract class BaseTestService
     {

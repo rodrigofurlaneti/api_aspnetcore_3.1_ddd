@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\application.csproj": {}
+    "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\application.csproj": {
+    "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\application.csproj",
-        "projectName": "application",
-        "projectPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\application.csproj",
+        "projectUniqueName": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\obj\\",
         "projectStyle": "PackageReference",
