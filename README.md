@@ -13,12 +13,14 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - <img src="https://miro.medium.com/max/1050/1*Nnu-OC1BbymgvpOiY9nvwg.png" width="25%" height="25%"> [Jwt - JSON Web Tokens](https://jwt.io/)
 - ![Alt text](https://www.newtonsoft.com/content/images/twitterlogo.png) [NewtonSoft](https://www.newtonsoft.com/json)
 - <img src="https://logodix.com/logo/2029015.png" width="25%" height="25%"> [xUnit](https://xunit.net/)
+- <img src="https://miro.medium.com/max/1050/1*m5x4ROALvP1y9283BlonKQ.png" width="25%" height="25%"> [Faker.NETCore](https://www.nuget.org/packages/Faker.NETCore)
 
 
 ## Api.Application - Estrutura padrão - controllers - projeto principal de inicio da solução.
 ## Api.Data - Comunicação com o Banco de Dados - biblioteca de classes
 ## Api.Data.Test - xUnit - biblioteca de classes
 ## Api.Service - Regra de negocio - biblioteca de classes
+## Api.Service.Test - xUnit - biblioteca de classes
 ## Api.Dominio - Modelos, Classes - biblioteca de classes
 ## Api.Cross - Suporte para camada application - biblioteca de classes
 

@@ -10,23 +10,26 @@ namespace Api.Service.Test.Action
     {
         private IUserService _serviceUser;
         private Mock<IUserService> _serviceMook;
-        [Fact(DisplayName="É possivel executar o método CREATE.")]
+        [Fact(DisplayName="É possivel executar o método PUT.")]
         public async Task ItIsPossibleToExecuteThePutMethod()
         {
             _serviceMook = new Mock<IUserService>();
-            _serviceMook.Setup(m => m.Post(userDto)).ReturnsAsync(userCreateResultDto);
+            _serviceMook.Setup(m => m.Post(userCreateDto)).ReturnsAsync(userCreateResultDto);
             _serviceUser = _serviceMook.Object;
             
-            var result = await _serviceUser.Put(userDto);
+            var result = await _serviceUser.Post(userCreateDto);
             Assert.NotNull(result);
             Assert.Equal(nameCreate, result.Name);
+            Assert.Equal(emailCreate, result.Email);
 
             _serviceMook = new Mock<IUserService>();
-            _serviceMook.Setup(m => m.Get(It.IsAny<Guid>())).Returns(Task.FromResult((UserDto) null));
+            _serviceMook.Setup(m => m.Put(userUpdateDto)).ReturnsAsync(userUpdateResultDto);
             _serviceUser = _serviceMook.Object;
 
-            var _record = await _serviceUser.Get(idCreate);
-            Assert.Null(_record);
+            var _resultUpdate = await _serviceUser.Put(userUpdateDto);
+            Assert.NotNull(_resultUpdate);
+            Assert.Equal(nameUpdate, _resultUpdate.Name);
+            Assert.Equal(emailUpdate, _resultUpdate.Email);
         }
     }
 }

@@ -29,19 +29,19 @@ namespace Api.Service.Services
             UserEntity userEntity = await _userRepository.SelectAsync(id);
             return _autoMapper.Map<UserDto>(userEntity);
         }
-        public async Task<IEnumerable<UserCreateDto>> GetAll()
+        public async Task<IEnumerable<UserDto>> GetAll()
         {
             IEnumerable<UserEntity> userEntity = await _userRepository.SelectAsync();
-            return _autoMapper.Map<IEnumerable<UserCreateDto>>(userEntity);
+            return _autoMapper.Map<IEnumerable<UserDto>>(userEntity);
         }
-        public async Task<UserCreateResultDto> Post(UserDto user)
+        public async Task<UserCreateResultDto> Post(UserCreateDto user)
         {
             UserModel model = _autoMapper.Map<UserModel>(user);
             UserEntity entity = _autoMapper.Map<UserEntity>(model);
             UserEntity result = await _userRepository.InsertAsync(entity);
             return _autoMapper.Map<UserCreateResultDto>(result);
         }
-        public async Task<UserUpdateResultDto> Put(UserDto user)
+        public async Task<UserUpdateResultDto> Put(UserUpdateDto user)
         {
             UserModel model = _autoMapper.Map<UserModel>(user);
             UserEntity entity = _autoMapper.Map<UserEntity>(model);

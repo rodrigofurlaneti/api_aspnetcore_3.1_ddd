@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\application.csproj",
+  "FilePath": "c:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Application\\Application.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14389,7 +14389,7 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "application",
+  "RootNamespace": "Application",
   "Documents": [],
   "SerializationFormat": "0.2"
 }

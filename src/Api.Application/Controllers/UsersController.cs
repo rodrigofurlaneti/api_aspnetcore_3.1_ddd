@@ -59,7 +59,7 @@ namespace Api.Application.Controllers
         
         [Authorize("Bearer")]
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] UserDto user)
+        public async Task<ActionResult> Post([FromBody] UserCreateDto user)
         {
             if (!ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace Api.Application.Controllers
             }
             try
             {
-                UserCreateResultDto result = await _userService.Post(user);
+                var result = await _userService.Post(user);
                 if (result != null)
                 {
                     return Created(new Uri(Url.Link("UserGetWithId", new { id = result.Id })), result);
@@ -85,7 +85,7 @@ namespace Api.Application.Controllers
 
         [Authorize("Bearer")]
         [HttpPut]
-        public async Task<ActionResult> Put([FromBody] UserDto user)
+        public async Task<ActionResult> Put([FromBody] UserUpdateDto user)
         {
             if (!ModelState.IsValid)
             {
