@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using Api.Domain.Dtos;
+using Api.Domain.Dtos.User;
 using Api.Domain.Interfaces.Services.User;
 using Moq;
 using Xunit;
@@ -17,7 +17,7 @@ namespace Api.Service.Test.Action
             _serviceMook.Setup(m => m.Post(userCreateDto)).ReturnsAsync(userCreateResultDto);
             _serviceUser = _serviceMook.Object;
             
-            var result = await _serviceUser.Post(userCreateDto);
+            UserCreateResultDto result = await _serviceUser.Post(userCreateDto);
             Assert.NotNull(result);
             Assert.Equal(nameCreate, result.Name);
             Assert.Equal(emailCreate, result.Email);

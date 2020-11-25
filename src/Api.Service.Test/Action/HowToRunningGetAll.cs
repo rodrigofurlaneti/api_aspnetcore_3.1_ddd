@@ -18,7 +18,7 @@ namespace Api.Service.Test.Action
             _serviceMook = new Mock<IUserService>();
             _serviceMook.Setup(m => m.GetAll()).ReturnsAsync(listUserDto);
             _serviceUser = _serviceMook.Object;
-            var result = await _serviceUser.GetAll();
+            IEnumerable<UserDto> result = await _serviceUser.GetAll();
             Assert.NotNull(result);
             Assert.True(result.Count() == 10);
 
@@ -27,7 +27,7 @@ namespace Api.Service.Test.Action
             _serviceMook.Setup(m => m.GetAll()).ReturnsAsync(_listResult.AsEnumerable);
             _serviceUser = _serviceMook.Object;
          
-            var _recordEmpty = await _serviceUser.GetAll();
+            IEnumerable<UserDto> _recordEmpty = await _serviceUser.GetAll();
             Assert.Empty(_recordEmpty);
             Assert.True(_recordEmpty.Count() == 0);
         }

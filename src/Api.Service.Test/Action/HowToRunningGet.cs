@@ -16,7 +16,7 @@ namespace Api.Service.Test.Action
             _serviceMook = new Mock<IUserService>();
             _serviceMook.Setup(m => m.Get(idCreate)).ReturnsAsync(userDto);
             _serviceUser = _serviceMook.Object;
-            var result = await _serviceUser.Get(idCreate);
+            UserDto result = await _serviceUser.Get(idCreate);
             Assert.NotNull(result);
             Assert.Equal(nameCreate, result.Name);
 
@@ -24,7 +24,7 @@ namespace Api.Service.Test.Action
             _serviceMook.Setup(m => m.Get(It.IsAny<Guid>())).Returns(Task.FromResult((UserDto) null));
             _serviceUser = _serviceMook.Object;
 
-            var _record = await _serviceUser.Get(idCreate);
+            UserDto _record = await _serviceUser.Get(idCreate);
             Assert.Null(_record);
         }
     }

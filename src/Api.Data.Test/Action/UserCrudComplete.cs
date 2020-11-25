@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Data.Context;
@@ -30,7 +31,7 @@ namespace Api.Data.Test.Action
                 };
 
                 //Test InsertAsync
-                var _recordCreated = await _repository.InsertAsync(_entity);
+                UserEntity _recordCreated = await _repository.InsertAsync(_entity);
                 Assert.NotNull(_recordCreated);
                 Assert.Equal(_entity.Email, _recordCreated.Email);
                 Assert.Equal(_entity.Name, _recordCreated.Name);
@@ -38,32 +39,32 @@ namespace Api.Data.Test.Action
                 _entity.Name = Faker.Name.First();
                 
                 //Test Update
-                var _recordUpdate = await _repository.UpdateAsync(_entity);
+                UserEntity _recordUpdate = await _repository.UpdateAsync(_entity);
                 Assert.NotNull(_recordUpdate);
                 Assert.Equal(_entity.Email, _recordUpdate.Email);
                 Assert.Equal(_entity.Name, _recordUpdate.Name);
  
                 //Test Exist
-                var _recordExist = await _repository.ExistAsync(_recordUpdate.Id);
+                bool _recordExist = await _repository.ExistAsync(_recordUpdate.Id);
                 Assert.True(_recordExist);
 
                 //Test Select
-                var _recordSelect = await _repository.SelectAsync(_recordUpdate.Id);
+                UserEntity _recordSelect = await _repository.SelectAsync(_recordUpdate.Id);
                 Assert.NotNull(_recordSelect);
                 Assert.Equal(_recordUpdate.Email, _recordSelect.Email);
                 Assert.Equal(_recordUpdate.Name, _recordSelect.Name);
 
                 //Test GetAll
-                var _recordGetAll = await _repository.SelectAsync();
+                IEnumerable<UserEntity> _recordGetAll = await _repository.SelectAsync();
                 Assert.NotNull(_recordGetAll);
                 Assert.True(_recordGetAll.Count() > 1);
 
                 //Test Exist
-                var _recordDelete = await _repository.DeleteAsync(_recordUpdate.Id);
+                bool _recordDelete = await _repository.DeleteAsync(_recordUpdate.Id);
                 Assert.True(_recordDelete);
                 
                 //Test FindByLogin
-                var _defaultUser = await _repository.FindByLogin("administrador@sis.com.br");
+                UserEntity _defaultUser = await _repository.FindByLogin("administrador@sis.com.br");
                 Assert.NotNull(_defaultUser);
                 Assert.Equal("Administrador", _defaultUser.Name);
                 Assert.Equal("administrador@sis.com.br", _defaultUser.Email);
