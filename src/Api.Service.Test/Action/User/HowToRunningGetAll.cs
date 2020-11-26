@@ -6,7 +6,7 @@ using Api.Domain.Dtos.User;
 using Api.Domain.Interfaces.Services.User;
 using Moq;
 using Xunit;
-namespace Api.Service.Test.Action
+namespace Api.Service.Test.Action.User
 {
     public class HowToRunningGetAll : UserTest
     {
