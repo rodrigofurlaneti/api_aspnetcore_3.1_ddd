@@ -6,7 +6,7 @@ namespace Api.Data.Context
 {
     public class MyContext : DbContext
     {
-        public DbSet<UserEntity> Users { get; set; }
+        public DbSet<UserEntity> User { get; set; }
         public DbSet<LogEntity> Logs { get; set; }
         public MyContext(DbContextOptions<MyContext> options) : base(options){}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -17,14 +17,14 @@ namespace Api.Data.Context
                 new UserEntity
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Administrador",
-                    Email = "administrador@sis.com.br",
+                    Name = "Administrator",
+                    Email = "Administrator@system.com",
                     Authenticated = true,
                     CreateAt = DateTime.Now,
                     UpdateAt = DateTime.Now
                 }
             );
-            modelBuilder.Entity<LogEntity>(new LogMap().Configure);
+            modelBuilder.Entity<UserEntity>(new UserMap().Configure);
         }
 
     }

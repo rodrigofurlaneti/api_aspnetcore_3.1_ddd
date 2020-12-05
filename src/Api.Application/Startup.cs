@@ -26,9 +26,9 @@ namespace Application
         public IWebHostEnvironment _webHostEnvironment { get; }
         public void ConfigureServices(IServiceCollection services)
         {
-            if(_webHostEnvironment.IsEnvironment("Testing"))
+            if(_webHostEnvironment.IsEnvironment("Test"))
             {
-                Environment.SetEnvironmentVariable("DB_CONNECTION", "Persist Security Info=True;Server=localhost;Initial Catalog=dbapi_integration_test;Uid=root;Password=mudar@123");
+                Environment.SetEnvironmentVariable("DB_CONNECTION", "Persist Security Info=True;Server=localhost;Port=3306;DataBase=api;Uid=root;Pwd=123456");
                 Environment.SetEnvironmentVariable("DATABASE", "MYSQL");
                 Environment.SetEnvironmentVariable("Audience", "ExemploAudience");
                 Environment.SetEnvironmentVariable("Issuer", "ExemploIssue");
