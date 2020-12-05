@@ -40,3 +40,17 @@ C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Service\o
 C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
 C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
 C:\Users\Administrador\Documents\GitHub\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\bin\Debug\netcoreapp3.1\Service.deps.json
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\bin\Debug\netcoreapp3.1\Service.dll
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\bin\Debug\netcoreapp3.1\Service.pdb
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\bin\Debug\netcoreapp3.1\Data.pdb
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.dll
+C:\Users\Administrador\Documents\api_aspnetcore_3.1_ddd\src\Api.Service\obj\Debug\netcoreapp3.1\Service.pdb

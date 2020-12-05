@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hBfEy+3GrMjXW5AP19l8lulSvvl8o/MJeacmgKQeVSS8g3L9liB7lmuI3OESJWg3iGSHZkieEvIFi7cIi1P+tg==",
+  "dgSpecHash": "1Cjqv+SCVFdYEoE+UjCvAXDvSnujV2bD22t42V0Q8DMnz1GibLsM89NDl64PtLFSg4gBT4HfZvgNHeb08QYOmQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\Documents\\GitHub\\api_aspnetcore_3.1_ddd\\src\\Api.Data.Test\\Api.Data.Test.csproj",
+  "projectFilePath": "C:\\Users\\Administrador\\Documents\\api_aspnetcore_3.1_ddd\\src\\Api.Data.Test\\Api.Data.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
