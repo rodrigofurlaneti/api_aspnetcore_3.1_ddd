@@ -16,18 +16,15 @@ namespace Api.Service.Services
         private IUserRepository _userRepository;
         private ILogRepository _logRepository;
         private SigningConfigurations _signingConfigurations;
-        private TokenConfigurations _tokenConfigurations;
         private IConfiguration _configuration{ get; }
         public LoginService(IUserRepository userRepository,
                             ILogRepository logRepository,
                             SigningConfigurations signingConfigurations,
-                            TokenConfigurations tokenConfigurations,
                             IConfiguration configuration)
         {
             _userRepository = userRepository;
             _logRepository = logRepository;
             _signingConfigurations = signingConfigurations;
-            _tokenConfigurations = tokenConfigurations;
             _configuration = configuration;
         }
         public async Task<UserEntity> FindByLogin(string email, string hostName, string ipv6, string ipv4)
@@ -56,7 +53,7 @@ namespace Api.Service.Services
                         }
                     );
                     DateTime createDate = DateTime.Now;
-                    DateTime expirationDate = createDate + TimeSpan.FromSeconds(_tokenConfigurations.Seconds); //id do token
+                    DateTime expirationDate = createDate + TimeSpan.FromSeconds(Convert.ToInt32(Environment.GetEnvironmentVariable("Seconds"))); //id do token
                     JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
                     string token = CreateToken(identity, createDate, expirationDate, handler);
                     UserEntity baseUserOk = new UserEntity();
@@ -74,8 +71,8 @@ namespace Api.Service.Services
         {
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor
             {
-                Issuer = _tokenConfigurations.Issuer,
-                Audience = _tokenConfigurations.Audience,
+                Issuer = Environment.GetEnvironmentVariable("Issuer"),
+                Audience = Environment.GetEnvironmentVariable("Audience"),
                 SigningCredentials = _signingConfigurations.SigningCredentials,
                 Subject = identity,
                 NotBefore = createDate,

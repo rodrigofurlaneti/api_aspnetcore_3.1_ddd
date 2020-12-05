@@ -17,12 +17,14 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 
 ## Api.Application - Estrutura padrão - controllers - projeto principal de inicio da solução.
+## Api.Application.Test - xUnit - biblioteca de classes para executar de teste unitário.
 ## Api.Data - Comunicação com o Banco de Dados - biblioteca de classes
-## Api.Data.Test - xUnit - biblioteca de classes
+## Api.Data.Test - xUnit - biblioteca de classes para executar de teste unitário.
 ## Api.Service - Regra de negocio - biblioteca de classes
-## Api.Service.Test - xUnit - biblioteca de classes
+## Api.Service.Test - xUnit - biblioteca de classes para executar de teste unitário.
 ## Api.Dominio - Modelos, Classes - biblioteca de classes
-## Api.Cross - Suporte para camada application - biblioteca de classes
+## Api.CrossCutting - Suporte para camada application - biblioteca de classes
+## Api.Integration.Test - xUnit - biblioteca de classes para executar de teste de integração.
 
 # <p align="center">Relacionamento de camadas DDD</p>
 

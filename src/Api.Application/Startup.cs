@@ -17,13 +17,23 @@ namespace Application
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
             Configuration = configuration;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IConfiguration Configuration { get; }
+        public IWebHostEnvironment _webHostEnvironment { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            if(_webHostEnvironment.IsEnvironment("Testing"))
+            {
+                Environment.SetEnvironmentVariable("DB_CONNECTION", "Persist Security Info=True;Server=localhost;Initial Catalog=dbapi_integration_test;Uid=root;Password=mudar@123");
+                Environment.SetEnvironmentVariable("DATABASE", "MYSQL");
+                Environment.SetEnvironmentVariable("Audience", "ExemploAudience");
+                Environment.SetEnvironmentVariable("Issuer", "ExemploIssue");
+                Environment.SetEnvironmentVariable("Seconds", "28800");
+            }
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesRepository(services);
             AutoMapper.MapperConfiguration configurationAutoMapper = new AutoMapper.MapperConfiguration(mapperConfig =>
