@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Api.CrossCutting.Mappings;
 using Api.Data.Context;
 using Api.Domain.Dtos;
+using Api.Domain.Login.Dtos;
 using Application;
 using AutoMapper;
 using Microsoft.AspNetCore.Hosting;

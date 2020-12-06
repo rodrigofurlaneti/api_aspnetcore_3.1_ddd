@@ -4,6 +4,8 @@ namespace Api.Domain.Interfaces
 {
     public interface IUserRepository : IRepository<UserEntity>
     {
-         Task<UserEntity> FindByLogin (string email);
+         Task<UserEntity> FindByLoginAsync (string email);
+         
+         UserEntity FindByLogin (string email);
     }
 }

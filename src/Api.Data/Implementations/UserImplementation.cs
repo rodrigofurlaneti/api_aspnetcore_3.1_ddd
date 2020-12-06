@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Api.Data.Context;
 using Api.Data.Repository;
@@ -13,7 +14,11 @@ namespace Api.Data.Implementations
         {
             _dataset = _context.Set<UserEntity>();
         }
-        public async Task<UserEntity> FindByLogin(string email)
+        public UserEntity FindByLogin(string email)
+        {
+            return _dataset.FirstOrDefault(u => u.Email.Equals(email));        
+        }
+        public async Task<UserEntity> FindByLoginAsync(string email)
         {
             return await _dataset.FirstOrDefaultAsync(u => u.Email.Equals(email));
         }

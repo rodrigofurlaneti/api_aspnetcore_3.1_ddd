@@ -64,10 +64,10 @@ namespace Api.Data.Test.Action
                 Assert.True(_recordDelete);
                 
                 //Test FindByLogin
-                UserEntity _defaultUser = await _repository.FindByLogin("administrador@sis.com.br");
+                UserEntity _defaultUser = await _repository.FindByLoginAsync("Administrator@sis.com.br");
                 Assert.NotNull(_defaultUser);
-                Assert.Equal("Administrador", _defaultUser.Name);
-                Assert.Equal("administrador@sis.com.br", _defaultUser.Email);
+                Assert.Equal("Administrator", _defaultUser.Name);
+                Assert.Equal("administrator@system.com.br", _defaultUser.Email);
             }
         }
     }

@@ -17,43 +17,6 @@ namespace Data.Migrations
                 .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Api.Domain.Entities.LogEntity", b =>
-                {
-                    b.Property<DateTime>("CreateAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<bool>("Authenticated")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<DateTime>("Expiration")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Hostname")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Ipv4")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Ipv6")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Token")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("CreateAt");
-
-                    b.ToTable("Logs");
-                });
-
             modelBuilder.Entity("Api.Domain.Entities.UserEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -92,18 +55,18 @@ namespace Data.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("user");
+                    b.ToTable("User");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("75aae6ff-fa34-4d55-af67-7c4abdd0e65f"),
+                            Id = new Guid("e35dcd68-3a85-4293-ae47-6df87c816b41"),
                             Authenticated = true,
-                            CreateAt = new DateTime(2020, 12, 5, 11, 3, 8, 700, DateTimeKind.Local).AddTicks(9464),
+                            CreateAt = new DateTime(2020, 12, 6, 10, 26, 54, 188, DateTimeKind.Local).AddTicks(8329),
                             Email = "Administrator@system.com",
                             Expiration = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Administrator",
-                            UpdateAt = new DateTime(2020, 12, 5, 11, 3, 8, 702, DateTimeKind.Local).AddTicks(2990)
+                            UpdateAt = new DateTime(2020, 12, 6, 10, 26, 54, 190, DateTimeKind.Local).AddTicks(5236)
                         });
                 });
 #pragma warning restore 612, 618

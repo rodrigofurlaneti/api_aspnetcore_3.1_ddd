@@ -1,5 +1,4 @@
 using System;
-using System.Security.Principal;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.IdentityModel.Tokens.Jwt;
@@ -9,64 +8,62 @@ using Api.Domain.Security;
 using Microsoft.Extensions.Configuration;
 using Api.Domain.Entities;
 using Microsoft.IdentityModel.Tokens;
+using Api.Domain.Dtos.Login;
+using Api.Domain.Login.Dtos;
+using System.Security.Principal;
 namespace Api.Service.Services
 {
     public class LoginService : ILoginService
     {
         private IUserRepository _userRepository;
-        private ILogRepository _logRepository;
         private SigningConfigurations _signingConfigurations;
         private IConfiguration _configuration{ get; }
         public LoginService(IUserRepository userRepository,
-                            ILogRepository logRepository,
                             SigningConfigurations signingConfigurations,
                             IConfiguration configuration)
         {
             _userRepository = userRepository;
-            _logRepository = logRepository;
             _signingConfigurations = signingConfigurations;
             _configuration = configuration;
         }
-        public async Task<UserEntity> FindByLogin(string email, string hostName, string ipv6, string ipv4)
+        public LoginResponseDto FindByLogin(string email)
         {
             UserEntity baseUser = new UserEntity();
-            if(email != null && !string.IsNullOrWhiteSpace(email))
+            LoginResponseDto loginResponseDto = new LoginResponseDto();
+            if (email != null && !string.IsNullOrWhiteSpace(email))
             {
-                baseUser = await _userRepository.FindByLogin(email);
-                if(baseUser == null)
+                baseUser = _userRepository.FindByLogin(email);
+                if (baseUser == null)
                 {
-                    UserEntity baseUserResp = new UserEntity();
-                    baseUserResp.Email = email;
-                    baseUserResp.Authenticated = false;
-                    baseUserResp.Message = "Falha ao atenticar, não existe este e-mail cadastrado na base!";
-                    await _logRepository.CreateLogAsync(baseUserResp, hostName, ipv6, ipv4);
-                    return baseUserResp;
+                    loginResponseDto.Authenticated = false;
+                    loginResponseDto.Message = "Falha ao autenticar";
+                    return loginResponseDto;
                 }
                 else
                 {
                     ClaimsIdentity identity = new ClaimsIdentity(
-                        new GenericIdentity(baseUser.Email),
-                        new []
+                        new GenericIdentity(email),
+                        new[]
                         {
-                            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), //id do token
+                            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                             new Claim(JwtRegisteredClaimNames.UniqueName, email),
                         }
                     );
-                    DateTime createDate = DateTime.Now;
-                    DateTime expirationDate = createDate + TimeSpan.FromSeconds(Convert.ToInt32(Environment.GetEnvironmentVariable("Seconds"))); //id do token
-                    JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+                    DateTime createDate = DateTime.UtcNow;
+                    DateTime expirationDate = createDate + TimeSpan.FromSeconds(Convert.ToInt32(Environment.GetEnvironmentVariable("Seconds")));
+                    var handler = new JwtSecurityTokenHandler();
                     string token = CreateToken(identity, createDate, expirationDate, handler);
-                    UserEntity baseUserOk = new UserEntity();
-                    baseUserOk = SuccessObject(baseUser.Id, baseUser.Name, createDate, expirationDate, token, email);
-                    await _logRepository.CreateLogAsync(baseUserOk, hostName, ipv6, ipv4);
-                    return baseUserOk;
+                    loginResponseDto = SuccessObject(baseUser.Name, createDate, expirationDate, token, baseUser.Name);                     
+                    return loginResponseDto;
                 }
             }
             else
             {
-                return null;
+                loginResponseDto.Authenticated = false;
+                loginResponseDto.Message = "Falha ao autenticar";
+                return loginResponseDto;
             }
-        }       
+        }
         private string CreateToken(ClaimsIdentity identity, DateTime createDate, DateTime expirationDate, JwtSecurityTokenHandler handler)
         {
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor
@@ -81,19 +78,54 @@ namespace Api.Service.Services
             string token = handler.WriteToken(securityToken);
             return token; 
         }
-        private UserEntity SuccessObject(Guid id, string name, DateTime createDate, DateTime expirationDate, string token, string email)
+        private LoginResponseDto SuccessObject(string name, DateTime createDate, DateTime expirationDate, string token, string email)
         {
-            UserEntity baseUserOk = new UserEntity();
-            baseUserOk.Id = id;
-            baseUserOk.Name = name;
-            baseUserOk.Authenticated = true;
-            baseUserOk.CreateAt = createDate;
-            baseUserOk.UpdateAt = DateTime.Now;
-            baseUserOk.Expiration = expirationDate;
-            baseUserOk.Token = token;
-            baseUserOk.Email = email;
-            baseUserOk.Message = "Usuário logado com sucesso";
-            return baseUserOk;
+            LoginResponseDto loginResponseDtoSuccess = new LoginResponseDto();
+            loginResponseDtoSuccess.NameUser = name;
+            loginResponseDtoSuccess.Authenticated = true;
+            loginResponseDtoSuccess.Create = createDate;
+            loginResponseDtoSuccess.Expiration = expirationDate;
+            loginResponseDtoSuccess.Token = token;
+            loginResponseDtoSuccess.EmailUser = email;
+            loginResponseDtoSuccess.Message = "Usuário logado com sucesso";
+            return loginResponseDtoSuccess;
+        }
+        public async Task<LoginResponseDto> FindByLoginAsync(string email)
+        {
+            UserEntity baseUser = new UserEntity();
+            LoginResponseDto loginResponseDto = new LoginResponseDto();
+            if (email != null && !string.IsNullOrWhiteSpace(email))
+            {
+                baseUser = await _userRepository.FindByLoginAsync(email);
+                if (baseUser == null)
+                {
+                    loginResponseDto.Authenticated = false;
+                    loginResponseDto.Message = "Falha ao autenticar";
+                    return loginResponseDto;
+                }
+                else
+                {
+                    ClaimsIdentity identity = new ClaimsIdentity(
+                        new GenericIdentity(email),
+                        new[]
+                        {
+                            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                            new Claim(JwtRegisteredClaimNames.UniqueName, email),
+                        }
+                    );
+                    DateTime createDate = DateTime.UtcNow;
+                    DateTime expirationDate = createDate + TimeSpan.FromSeconds(Convert.ToInt32(Environment.GetEnvironmentVariable("Seconds")));
+                    var handler = new JwtSecurityTokenHandler();
+                    string token = CreateToken(identity, createDate, expirationDate, handler);
+                    return SuccessObject(baseUser.Name, createDate, expirationDate, token, baseUser.Name);                     
+                }
+            }
+            else
+            {
+                loginResponseDto.Authenticated = false;
+                loginResponseDto.Message = "Falha ao autenticar";
+                return loginResponseDto;
+            }
         }
     }
 }
