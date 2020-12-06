@@ -14,7 +14,7 @@ namespace Api.Service.Services
     public class UserService : IUserService
     {
         private IRepository<UserEntity> _userRepository;
-        private readonly  IMapper _autoMapper;
+        private readonly IMapper _autoMapper;
         public UserService(IRepository<UserEntity> userRepository, IMapper autoMapper)
         {
             _userRepository = userRepository;
@@ -31,8 +31,8 @@ namespace Api.Service.Services
         }
         public async Task<IEnumerable<UserDto>> GetAll()
         {
-            IEnumerable<UserEntity> userEntity = await _userRepository.SelectAsync();
-            return _autoMapper.Map<IEnumerable<UserDto>>(userEntity);
+            IEnumerable<UserEntity> listUserEntity = await _userRepository.SelectAsync();
+            return _autoMapper.Map<IEnumerable<UserDto>>(listUserEntity);
         }
         public async Task<UserCreateResultDto> Post(UserCreateDto user)
         {

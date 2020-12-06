@@ -38,7 +38,7 @@ namespace Api.Service.Test.AutoMapper
             }
 
             //Model => Entity
-            UserEntity dtoToEntity = Mapper.Map<UserEntity>(model);
+           var dtoToEntity = Mapper.Map<UserEntity>(model);
             Assert.Equal(dtoToEntity.Id, model.Id);
             Assert.Equal(dtoToEntity.Name, model.Name);
             Assert.Equal(dtoToEntity.Email, model.Email);

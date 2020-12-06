@@ -7,7 +7,7 @@ namespace Api.CrossCutting.Mappings
     {
         public ModelToEntityProfile()
         {
-            CreateMap<UserModel, UserEntity>().ReverseMap();
+            CreateMap<UserEntity, UserModel>().ReverseMap();
         }        
     }
 }
