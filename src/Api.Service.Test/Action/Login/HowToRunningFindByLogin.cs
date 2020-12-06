@@ -15,16 +15,16 @@ namespace Api.Service.Test.Action.Login
         public async Task ItIsPossibleToExecuteTheFindByLoginMethod()
         {
             LoginResponseDto objectReturn = new LoginResponseDto(); 
-            objectReturn.NameUser = Faker.Name.FullName();
-            objectReturn.EmailUser = Faker.Internet.Email();
+            objectReturn.Name = Faker.Name.FullName();
+            objectReturn.Email = Faker.Internet.Email();
             objectReturn.Authenticated = true;
             objectReturn.Message = Faker.ISOCountryCode.Next();
-            objectReturn.Create = DateTime.Now;
+            objectReturn.CreateAt = DateTime.Now;
             objectReturn.Expiration = DateTime.Now.AddHours(8);
             objectReturn.Token = Faker.Internet.DomainName();
 
             UserEntity userEntity = new UserEntity();
-            userEntity.Email = objectReturn.EmailUser;
+            userEntity.Email = objectReturn.Email;
             
             _serviceMook = new Mock<ILoginService>();
             _serviceMook.Setup(m => m.FindByLoginAsync(userEntity.Email)).ReturnsAsync(objectReturn);

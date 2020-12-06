@@ -27,8 +27,8 @@ namespace Api.Service.Test.Action.User
 
             UserUpdateResultDto _resultUpdate = await _serviceUser.Put(userUpdateDto);
             Assert.NotNull(_resultUpdate);
-            Assert.Equal(nameUpdate, _resultUpdate.Name);
-            Assert.Equal(emailUpdate, _resultUpdate.Email);
+            Assert.Equal(result.Name, _resultUpdate.Name);
+            Assert.Equal(result.Email, _resultUpdate.Email);
         }
     }
 }

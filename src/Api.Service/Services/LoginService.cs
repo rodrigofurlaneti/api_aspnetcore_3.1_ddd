@@ -81,12 +81,12 @@ namespace Api.Service.Services
         private LoginResponseDto SuccessObject(string name, DateTime createDate, DateTime expirationDate, string token, string email)
         {
             LoginResponseDto loginResponseDtoSuccess = new LoginResponseDto();
-            loginResponseDtoSuccess.NameUser = name;
+            loginResponseDtoSuccess.Name = name;
             loginResponseDtoSuccess.Authenticated = true;
-            loginResponseDtoSuccess.Create = createDate;
+            loginResponseDtoSuccess.CreateAt = createDate;
             loginResponseDtoSuccess.Expiration = expirationDate;
             loginResponseDtoSuccess.Token = token;
-            loginResponseDtoSuccess.EmailUser = email;
+            loginResponseDtoSuccess.Email = email;
             loginResponseDtoSuccess.Message = "Usuário logado com sucesso";
             return loginResponseDtoSuccess;
         }

@@ -6,18 +6,21 @@ namespace Api.Integration.Test
     public class LoginResponseDto
     {
         [JsonProperty("id")]
-        public int id { get; set; }
+        public int Id { get; set; }
         [JsonProperty("autenticated")]
-        public bool autenticated { get; set; }
-        [JsonProperty("create")]
-        public DateTime create { get; set; }
+        public bool Autenticated { get; set; }
+        [JsonProperty("createAt")]
+        public DateTime CreateAt { get; set; }
+        [JsonProperty("updateAt")]
+        public DateTime UpdateAt { get; set; }
+ 
         [JsonProperty("expiration")]
-        public DateTime expiration { get; set; }
+        public DateTime Expiration { get; set; }
         [JsonProperty("token")]
-        public string token { get; set; }
-        [JsonProperty("userName")]
-        public string userName { get; set; }
+        public string Token { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
         [JsonProperty("message")]
-        public string message { get; set; }
+        public string Message { get; set; }
     }
 }
