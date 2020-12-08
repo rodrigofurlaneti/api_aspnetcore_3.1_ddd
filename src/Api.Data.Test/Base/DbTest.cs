@@ -12,7 +12,8 @@ namespace Api.Data.Test.Base
         {
             ServiceCollection serviceCollection = new ServiceCollection();
             serviceCollection.AddDbContext<MyContext>(o => 
-            o.UseSqlServer($"Server=.\\SQLSERVER2019;Initial Catalog={_dataBaseName};MultipleActiveResultSets=true;User ID=sa;Password=mudar@123"),
+            //o.UseSqlServer($"Server=.\\SQLSERVER2019;Initial Catalog={_dataBaseName};MultipleActiveResultSets=true;User ID=sa;Password=mudar@123"),
+            o.UseMySql($"Server=localhost;Port=3306;DataBase={_dataBaseName};Uid=root;Pwd=123456"),
             ServiceLifetime.Transient
             );
             serviceProvider = serviceCollection.BuildServiceProvider();

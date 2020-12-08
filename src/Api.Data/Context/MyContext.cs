@@ -1,5 +1,6 @@
 using System;
 using Api.Data.Mapping;
+using Api.Data.Seeds;
 using Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 namespace Api.Data.Context
@@ -12,18 +13,20 @@ namespace Api.Data.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<UserEntity>(new UserMap().Configure);
+            modelBuilder.Entity<FederalUnitEntity>(new FederalUnitMap().Configure);
+            modelBuilder.Entity<CountyEntity>(new CountyMap().Configure);
+            modelBuilder.Entity<ZipCodeEntity>(new ZipCodeMap().Configure);
             modelBuilder.Entity<UserEntity>().HasData(
                 new UserEntity
                 {
                     Id = Guid.NewGuid(),
                     Name = "Administrator",
                     Email = "Administrator@system.com",
-                    Authenticated = true,
                     CreateAt = DateTime.Now,
                     UpdateAt = DateTime.Now
                 }
             );
-            modelBuilder.Entity<UserEntity>(new UserMap().Configure);
+            FederalUnitSeeds.FederalUnits(modelBuilder);
         }
     }
 }

@@ -20,10 +20,5 @@ namespace Api.Domain.Entities {
             get { return _updateAt; } 
             set { _updateAt = (value == null ? DateTime.Now : value); } 
         }
-      
-        public virtual bool Authenticated { get; set; }
-        public virtual string Message { get; set; }
-        public virtual string Token { get; set; }
-        public virtual DateTime Expiration { get; set; }
     }
 }
