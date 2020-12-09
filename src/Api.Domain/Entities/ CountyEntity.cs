@@ -9,9 +9,7 @@ namespace Api.Domain.Entities
         [MaxLength(60)]
         public string Name { get; set; }
         public int CodeIbge { get; set; }
-        [Required]
-        [MaxLength(2)]
-        public Guid UfId { get; set; }
+        public Guid FederalUnitId { get; set; }
         public FederalUnitEntity FederalUnit { get; set; }
         public IEnumerable<ZipCodeEntity> ZipCodes { get; set; }
     }
