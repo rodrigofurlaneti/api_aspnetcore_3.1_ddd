@@ -7,7 +7,22 @@ namespace Api.CrossCutting.Mappings
     {
         public ModelToEntityProfile()
         {
-            CreateMap<UserEntity, UserModel>().ReverseMap();
+            #region County
+            //County
+                CreateMap<CountyEntity, CountyModel>().ReverseMap();
+            #endregion
+            #region FederalUnit
+            //FederalUnit
+                CreateMap<FederalUnitEntity, FederalUnitModel>().ReverseMap();
+            #endregion
+            #region User
+            //User
+                CreateMap<UserEntity, UserModel>().ReverseMap();
+            #endregion
+            #region ZipCode
+            //ZipCode
+                CreateMap<ZipCodeEntity, ZipCodeModel>().ReverseMap();
+            #endregion
         }        
     }
 }

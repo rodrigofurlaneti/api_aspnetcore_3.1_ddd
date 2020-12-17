@@ -5298,11 +5298,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrador\\Documents\\api_aspnetcore_3.1_ddd\\src\\Api.Service\\Service.csproj",
+      "projectUniqueName": "C:\\Users\\Administrador\\source\\repos\\api_aspnetcore_3.1_ddd\\src\\Api.Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "C:\\Users\\Administrador\\Documents\\api_aspnetcore_3.1_ddd\\src\\Api.Service\\Service.csproj",
+      "projectPath": "C:\\Users\\Administrador\\source\\repos\\api_aspnetcore_3.1_ddd\\src\\Api.Service\\Service.csproj",
       "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrador\\Documents\\api_aspnetcore_3.1_ddd\\src\\Api.Service\\obj\\",
+      "outputPath": "C:\\Users\\Administrador\\source\\repos\\api_aspnetcore_3.1_ddd\\src\\Api.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5322,11 +5322,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Administrador\\Documents\\api_aspnetcore_3.1_ddd\\src\\Api.Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\Documents\\api_aspnetcore_3.1_ddd\\src\\Api.Data\\Data.csproj"
+            "C:\\Users\\Administrador\\source\\repos\\api_aspnetcore_3.1_ddd\\src\\Api.Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\Administrador\\source\\repos\\api_aspnetcore_3.1_ddd\\src\\Api.Data\\Data.csproj"
             },
-            "C:\\Users\\Administrador\\Documents\\api_aspnetcore_3.1_ddd\\src\\Api.Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\Documents\\api_aspnetcore_3.1_ddd\\src\\Api.Domain\\Domain.csproj"
+            "C:\\Users\\Administrador\\source\\repos\\api_aspnetcore_3.1_ddd\\src\\Api.Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Administrador\\source\\repos\\api_aspnetcore_3.1_ddd\\src\\Api.Domain\\Domain.csproj"
             }
           }
         }
