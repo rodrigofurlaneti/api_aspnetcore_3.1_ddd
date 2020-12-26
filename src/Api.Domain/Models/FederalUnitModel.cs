@@ -1,6 +1,8 @@
+using System;
+
 namespace Api.Domain.Models
 {
-    public class FederalUnitModel
+    public class FederalUnitModel : BaseModel
     {
         private string _initials;
         public string Initials
