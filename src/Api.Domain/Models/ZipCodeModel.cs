@@ -1,8 +1,7 @@
 using System;
-
 namespace Api.Domain.Models
 {
-    public class ZipCodeModel
+    public class ZipCodeModel : BaseModel
     {
         private string _zipCode;
         public string ZipCode

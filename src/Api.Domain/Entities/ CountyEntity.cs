@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 namespace Api.Domain.Entities
 {
-    public class  CountyEntity : BaseEntity
+    public class CountyEntity : BaseEntity
     {
         [Required]
         [MaxLength(60)]

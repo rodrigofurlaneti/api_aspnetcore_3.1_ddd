@@ -2,7 +2,7 @@ using System;
 
 namespace Api.Domain.Models
 {
-    public class CountyModel
+    public class CountyModel : BaseModel
     {
         private string _name;
         public string Name
@@ -10,8 +10,8 @@ namespace Api.Domain.Models
             get { return _name; }
             set { _name = value; }
         }
-        private string _codeIbge;
-        public string CodeIbge
+        private int _codeIbge;
+        public int CodeIbge
         {
             get { return _codeIbge; }
             set { _codeIbge = value; }
