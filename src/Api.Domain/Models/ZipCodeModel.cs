@@ -3,29 +3,14 @@ namespace Api.Domain.Models
 {
     public class ZipCodeModel : BaseModel
     {
-        private string _zipCode;
-        public string ZipCode
-        {     
-            get { return _zipCode; } 
-            set { ZipCode = value;}
-        }
-        private string _publicPlace;
-        public string PublicPlace
-        {     
-            get { return _publicPlace; } 
-            set { PublicPlace = value;}
-        }
+        public string ZipCode { get; set;}
+        public string PublicPlace { get; set;}
         private string _number;
         public string Number
         {     
             get { return _number; } 
             set { Number = string.IsNullOrEmpty(value) ? "S/N" : value; }
         }
-        private Guid _countyId;
-        public Guid CountyId
-        {     
-            get { return _countyId; } 
-            set { CountyId = value;}
-        }
+        public Guid CountyId{ get; set;}
     }
 }

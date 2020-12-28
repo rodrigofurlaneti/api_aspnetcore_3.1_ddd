@@ -9,7 +9,7 @@ namespace Api.Domain.Models
             get { return _id; }
             set { _id = value; }
         }
-                private DateTime _createAt;
+        private DateTime _createAt;
         public DateTime CreateAt
         {
             get { return _createAt; }

@@ -17,8 +17,8 @@ namespace Api.Service.Test.AutoMapper
             {
                 Id = Guid.NewGuid(),
                 ZipCode = Faker.RandomNumber.Next(1,10000).ToString(),
-                PublicPlace = Faker.Address.StreetName(),
-                Number = "",
+                PublicPlace = Faker.Address.StreetName().ToString(),
+                Number = Faker.RandomNumber.Next(1,1000).ToString(),
                 CreateAt = DateTime.Now,
                 UpdateAt = DateTime.Now,
                 CountyId = Guid.NewGuid()
